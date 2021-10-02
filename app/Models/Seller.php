@@ -9,15 +9,20 @@ class Seller extends Model
 {
     use HasFactory;
 
+    protected $hidden = [
+      'created_at',
+      'updated_at',
+    ];
+
     protected $fillable = [
       'seller_type'
     ];
 
     public function details(){
-      if( $this->seller_type == 'persona' ){
-        return $this->hasOne('App\Models\Persona');
+      if( $this->seller_type == "empresa"){
+        return $this->empresa();
       }
-      return $this->hasOne('App\Models\Empresa');
+      return $this->persona();
     }
 
     public function persona(){

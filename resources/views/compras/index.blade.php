@@ -15,6 +15,12 @@
             <th>
               Vendedor
             </th>
+            <th>
+              Detalles
+            </th>
+            <th>
+              Total
+            </th>
           </thead>
           <tbody>
             @foreach( $compras as $compra )
@@ -24,6 +30,12 @@
                 </td>
                 <td>
                   {{ $compra->seller->details->name }}
+                </td>
+                <td>
+                  {{ $compra->details()->count() }}
+                </td>
+                <td>
+                  {{ $compra->total }}
                 </td>
               </tr>
             @endforeach

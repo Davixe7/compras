@@ -18,4 +18,5 @@ Route::get('/', function () {
 });
 
 Route::resource('sellers', 'App\Http\Controllers\SellerController');
+Route::resource('products', 'App\Http\Controllers\ProductController');
 Route::resource('compras', 'App\Http\Controllers\CompraController');

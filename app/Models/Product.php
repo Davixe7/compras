@@ -5,26 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Empresa extends Model
+class Product extends Model
 {
     use HasFactory;
 
     protected $hidden = [
-      'updated_at',
       'created_at',
+      'updated_at',
     ];
 
     protected $fillable = [
-      'ruc',
       'name',
-      'address',
-      'phone',
-      'email',
-      'contact',
-      'seller_id',
+      'price'
     ];
-  
-    public function seller(){
-      return $this->belongsTo('App\Models\Seller');
-    }
 }
+
